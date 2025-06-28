@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Abby Anagramm trainer</title>
+	<script>
+
+		function generateAnagram(word){
+			letters = []
+			for(i = 0; i<word.length; i++){
+				letters.splice(Math.floor(Math.random() * (letters.length+1)),0,word[i])
+			}
+			return letters.join(" ").toUpperCase()
+		};
+		word = ""
+		function changeDivContent() { 
+			word = words[Math.floor(Math.random() * words.length)]
+			document.getElementById('reveal').innerHTML = "";
+		
+			document.getElementById('content').innerHTML = generateAnagram(word);
+    	};
+
+    	function revealWord(){
+
+    		document.getElementById('reveal').innerHTML = word;
+    	}
+
+	</script>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+    /* Make sure the content is centered vertically and horizontally */
+    html, body {
+      height: 100%;
+    }
+
+    .full-height {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+    }
+
+     .form-box {
+      border: 2px solid #007bff; /* Blue border */
+      border-radius: 10px; /* Rounded corners */
+      padding: 30px; /* Add padding inside the box */
+      background-color: #f9f9f9; /* Light background color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for a modern look */
+    }
+
+    #content{
+    	height: 40px;
+    }
+
+    #reveal{
+    	height: 30px;
+    }
+
+  </style>
+
+</head>
+<body><div class="full-height">
+    <div class="container">
+      <div class="form-box">
+      	<h1>Abigails Anagram Trainer</h1>
+        <form>
+          <!-- First Section -->
+          <div class="form-group row">
+            <div class="col-12">
+              <button onclick="changeDivContent()" class="btn btn-primary btn-block" type="button">Get new word</button>
+              <div id="content" class="mt-3"></div>
+            </div>
+          </div>
+
+          <!-- Second Section -->
+          <div class="form-group row">
+            <div class="col-12">
+              <button onclick="revealWord()" class="btn btn-primary btn-block" type="button">Reveal</button>
+              <div id="reveal" class="mt-3"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+  	
+const words = [
+  "Abendrot", "Abnehmer", "Abschied", "Absender", "Abstrich", "Ackerbau", "Adeliger", "Agentur", "Akademie",
+  "Akteurin", "Allianz", "Alltagss", "Altenheim", "Ambition", "Amphibie", "Analogie", "Anatomie", "Andenken",
+  "Angebote", "Angsttraum", "Anklager", "Anleiher", "Anordnung", "Anpflanzung", "Anrainer", "Anspruch",
+  "Antworten", "Anwesend", "Anzeichen", "Appetit", "Archipel", "Argument", "Armbanduhr", "Armutsein", "Arztkittel",
+  "Ärztekammer", "Asphalt", "Asteroid", "Aufbruch", "Aufnahme", "Aufräumen", "Aufstand", "Auftrag", "Ausbeute",
+  "Ausdauer", "Ausflug", "Ausraster", "Aussicht", "Ausstand", "Auswahl", "Autonomie", "Autoren", "Baggersee",
+  "Bahnhof", "Balkonien", "Ballspiel", "Bankwesen", "Barometer", "Bauernhof", "Baugesetz", "Bedeutung",
+  "Begriffe", "Beispiel", "Bekannte", "Belohnung", "Bemühung", "Benutzer", "Bereiche", "Berliner", "Berufung",
+  "Besitzer", "Besuches", "Betracht", "Beutezug", "Bewegung", "Bewohner", "Bildband", "Bildschirm", "Bissigkeit",
+  "Blitzlicht", "Blumenart", "Bodenlos", "Botschaft", "Bratpfanne", "Brennerei", "Buchladen", "Buchseite",
+  "Burggraben", "Campingplatz", "Charakter", "Chemiker", "Chroniken", "Computer", "Cousinen", "Dachboden",
+  "Dachfirst", "Dampflock", "Dauerschlaf", "Denkweise", "Deutung", "Dialogen", "Dichtung", "Dienstag", "Dilemma",
+  "Dorfstraße", "Drehbuch", "Druckerei", "Dunkelheit", "Edelstein", "Effektive", "Ehrlichkeit", "Einklang",
+  "Einladung", "Einsicht", "Einwurf", "Einzelne", "Empfänger", "Endspiel", "Entdecker", "Entfernung", "Entscheid",
+  "Entwicklung", "Erbschaft", "Erfahrung", "Erfinder", "Ergebnis", "Erhebung", "Erinnerung", "Erlaubnis",
+  "Ernennung", "Erntezeit", "Erziehung", "Esszimmer", "Facharbeit", "Fahrstuhl", "Fantasien", "Feierabend",
+  "Fernsehen", "Festnahme", "Feuchtigkeit", "Filmabend", "Finsternis", "Fischfang", "Flaschen", "Fledermaus",
+  "Flüchtling", "Flughafen", "Flurstück", "Folterkammer", "Forschung", "Fotografie", "Freigabe", "Fremdsprache",
+  "Friedhof", "Funkgerät", "Fußgänger", "Gartenbau", "Gastgeber", "Gebäude", "Gedanken", "Gefängnis", "Gefieder",
+  "Gegenteil", "Geheimnis", "Geistlich", "Geldmenge", "Gemälde", "Gemeinde", "Gepäckfach", "Geräusche", "Geschenk",
+  "Geschichte", "Gesetzbuch", "Gespräch", "Gestalt", "Getränke", "Gewaltakt", "Gewinner", "Gießkanne", "Glasplatte",
+  "Glaubenssatz", "Gletscher", "Gleichung", "Glückwunsch", "Grasfläche", "Grenze", "Grillen", "Großeltern",
+  "Gründlich", "Gutsherren", "Haarschnitt", "Handelnde", "Handgelenk", "Handtuch", "Hauswand", "Heimfahrt",
+  "Heldinnen", "Helikopter", "Herberge", "Herzklopfen", "Hindernis", "Hinterhof", "Hitzewelle", "Hochhaus",
+  "Hochzeit", "Honigbiene", "Horizont", "Hotelgast", "Hundeleine", "Hungerzeit", "Ideallinie", "Impulsgeber",
+  "Industrie", "Inselreich", "Jahreszeit", "Juwelier", "Kaffeetasse", "Kalkstein", "Kameraden", "Kanalisation",
+  "Kanzlerin", "Karriere", "Kartoffel", "Kastanien", "Kaufpreis", "Kellerraum", "Kerzenlicht", "Kindergarten",
+  "Kleiderschrank", "Kletterer", "Klimaangst", "Kochbuch", "Kofferraum", "Kollegen", "Kompass", "Konferenz",
+  "Konsument", "Kontakt", "Kopfhörer", "Korrektur", "Kostenlos", "Kräutergarten", "Kugelschreiber", "Kulturhaus",
+  "Kunstwerk", "Ladegerät", "Lagerhaus", "Landkarte", "Landstraße", "Laufschuhe", "Lebensziel", "Lehrerzimmer",
+  "Lernphase", "Lichtblick", "Lieferung", "Lippenstift", "Lösung", "Luftfilter", "Lustigkeit", "Mahlzeiten",
+  "Malerwerk", "Mandarine", "Marktplatz", "Marmelade", "Maßanzug", "Meeresgrund", "Mehlstaub", "Meisterin",
+  "Melodrama", "Menschheit", "Metropole", "Mikroskop", "Militärzeit", "Mischform", "Mitbewohner", "Mitteilung",
+  "Mittwoch", "Möbelschrank", "Morgengrauen", "Müllabfuhr", "Muskelkraft", "Musterung", "Nachricht", "Nahrung",
+  "Namenstag", "Naturliebe", "Nebenraum", "Neigung", "Netzwerke", "Notausgang", "Notizbuch", "Nutzfläche",
+  "Oberschule", "Oberteil", "Ohrenschützer", "Operation", "Orchester", "Ordnung", "Ortswechsel", "Papierkorb",
+  "Parkticket", "Passwort", "Pausenhof", "Pendelzug", "Pflanzung", "Phantasie", "Pflicht", "Pflügerin",
+  "Plattenbau", "Poesiealbum", "Polizei", "Praktikum", "Preisgeld", "Pressefoto", "Produkt", "Puzzleteil",
+  "Qualität", "Quelltext", "Ratgeber", "Rechnung", "Regenbogen", "Reinigung", "Reisepass", "Rekorder", "Relevanz",
+  "Rennstrecke", "Rezeption", "Richtigkeit", "Ritterburg", "Rosenkranz", "Rucksack", "Ruhepause", "Sachverhalt",
+  "Saisonende", "Samstag", "Sammelmappe", "Schauspiel", "Schlafsack", "Schlosspark", "Schmuckstück", "Schnittmenge",
+  "Schreibweise", "Schulbank", "Schutzhelm", "Sehenswürdigkeit", "Seltenheit", "Sicherheitsnetz", "Siegertyp",
+  "Silberring", "Skizzenbuch", "Sonnenschirm", "Spaziergang", "Spielplatz", "Spionage", "Sprachfehler", "Sprechstunde",
+  "Springbrunnen", "Staatsform", "Stammtisch", "Standpunkt", "Statistik", "Steckdose", "Steueramt", "Stiefmutter",
+  "Stiftelsen", "Stillleben", "Stockwerk", "Straßenbahn", "Streitpunkt", "Studentenheim", "Sturmtief", "Suchanzeige",
+  "Sumpflandschaft", "Supermarkt", "Symmetrie", "Tagesablauf", "Taschenbuch", "Tastatur", "Tatkraft", "Technik",
+  "Teilnehmer", "Telefonat", "Tennisschläger", "Tiefgarage", "Tiergarten", "Tramperin", "Treibstoff", "Trennlinie",
+  "Trinkwasser", "Trommelwirbel", "Turnhalle", "Überraschung", "Uhrzeiger", "Umkleide", "Umweltzone", "Unendlichkeit",
+  "Unterkunft", "Urlaubsreise", "Vaterfigur", "Verabredung", "Verbindung", "Vergangenheit", "Verhalten", "Verlobung",
+  "Vermittler", "Verordnung", "Versammlung", "Verstand", "Vertrauen", "Verwaltung", "Videospiel", "Vielzahl",
+  "Vogelschar", "Volksfest", "Vorratshaus", "Vorsicht", "Wahrsager", "Waldgebiet", "Wandertour", "Warenkorb",
+  "Wasserfall", "Weintraube", "Weitblick", "Werkstatt", "Wetterlage", "Widerspruch", "Wiedersehen", "Wirklichkeit",
+  "Wissenschaft", "Wohnmobil", "Wolkenbruch", "Wörterbuch", "Wunschtraum", "Zahnarztpraxis", "Zahlencode",
+  "Zentralbank", "Zeremonie", "Zielsetzung", "Zimmermann", "Zufriedenheit", "Zukunftstraum", "Zuschauer", "Zuverlässig"
+];
+
+
+  </script>
+</body>
+</html>
